@@ -1,0 +1,26 @@
+
+
+<div id="app">
+
+  <div v-if="isLoading">
+    <p>{{ loadingMessage }}</p>
+  </div>
+
+  <div v-if="!isLoading">
+    <h1>{{ title }}</h1>
+    
+    <ul>
+      <li v-for="element of list">{{ element }}</li>
+    </ul>
+
+    <input v-model="input">
+    <p>{{ inputReverse }}</p>
+
+    <score v-bind:score="points" v-bind:class="{ 'high-score': isHighScore}"></score>
+    <button v-on:click="addScore">Add score</button>
+    <button v-on:click="resetScore">Reset score</button>
+  </div>
+
+  
+
+</div>
